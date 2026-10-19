@@ -98,6 +98,23 @@ ACNXNUM+OPTIMIZER.cmd->  network restore block runs automatically before reboot
 
 Then reboot. Details in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
+### Automated live check
+
+Instead of guessing, inspect the running machine:
+
+```powershell
+# report only
+powershell -ExecutionPolicy Bypass -File tools\verify-live.ps1
+
+# report, repair, and toggle Alt+Z on screen to prove the overlay works
+powershell -ExecutionPolicy Bypass -File tools\verify-live.ps1 -Fix -TestOverlay
+```
+
+It checks the same list the auditor enforces — network services, NDIS/WLAN components, the
+connectivity probe, IPv6 binding, adapters, ICMP/DNS/HTTPS, both NVIDIA containers, the overlay
+registry, ShadowPlay state, the decoded hotkey — and exits non-zero if anything on the guaranteed
+path is broken.
+
 ## Repository layout
 
 ```text

@@ -2,6 +2,20 @@
 
 Every problem below is recoverable. Do not reinstall Windows.
 
+## Fastest path: run the live check
+
+```powershell
+# report only
+powershell -ExecutionPolicy Bypass -File tools\verify-live.ps1
+
+# repair anything broken, then toggle Alt+Z to prove the overlay works
+powershell -ExecutionPolicy Bypass -File tools\verify-live.ps1 -Fix -TestOverlay
+```
+
+It prints each finding with the exact repair command, and exits non-zero while anything on the
+Wi-Fi / Ethernet / NVIDIA path is broken. Use the manual steps below when you want to see exactly
+what is being changed.
+
 ## First: run the fixer, then reboot
 
 | Build you ran | Fixer path |
