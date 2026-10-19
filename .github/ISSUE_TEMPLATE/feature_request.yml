@@ -1,0 +1,68 @@
+name: Feature or service change
+description: Propose a new tweak, a service start-type change, or a new recovery path.
+title: "[feat] <area>: <proposal>"
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: build
+    attributes:
+      label: Which build should change?
+      options:
+        - ACNXClick.bat (One-Click)
+        - ACNXNUM+OPTIMIZER.cmd (Platinum)
+        - ACNXHI+OPTIMIZER.bat (High Impact)
+        - All builds
+        - Tooling / docs only
+    validations:
+      required: true
+
+  - type: input
+    id: target
+    attributes:
+      label: Service, registry key or setting
+      placeholder: SysMain
+    validations:
+      required: true
+
+  - type: input
+    id: before
+    attributes:
+      label: Current value
+      placeholder: auto
+
+  - type: input
+    id: after
+    attributes:
+      label: Proposed value
+      placeholder: demand
+
+  - type: textarea
+    id: measured
+    attributes:
+      label: What did you measure?
+      description: Numbers, not impressions. Boot time, RAM, frame time, latency, power draw.
+      placeholder: |
+        3 machines, Win11 23H2, cold boot 5-run average
+        before: 18.4 s
+        after:  17.1 s
+        no observed regression in 7 days
+    validations:
+      required: true
+
+  - type: textarea
+    id: risk
+    attributes:
+      label: What could break, and what restores it?
+      placeholder: |
+        Might affect HDD prefetch. Restore line: sc config SysMain start= auto
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: This does not touch a network service, NDIS component or NVIDIA container
+        - label: I added the matching restore line to the fixer
+        - label: I ran tools/audit-release.ps1 and it passes

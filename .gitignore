@@ -1,0 +1,22 @@
+# Build output
+dist/
+*.zip
+SHA256SUMS.txt
+
+# Local scratch
+*.bak
+*.bak-*
+*.pre-*
+*.orig
+*.tmp
+~$*
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local test copies of the optimizers
+sandbox/

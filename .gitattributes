@@ -1,0 +1,17 @@
+# Batch files must keep CRLF. Git's default autocrlf would rewrite them and
+# break the box-art menus and non-ASCII strings inside the scripts.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+*.yml   text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+
+# These are shipped byte-for-byte and must never be normalized or diffed.
+src/*.bat -text
+src/*.cmd -text
+dist/*    -text
+
+*.zip     binary
+*.png     binary
+*.ico     binary

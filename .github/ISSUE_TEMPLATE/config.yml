@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Installation help
+    url: https://github.com/acenkk13/ACNX/blob/main/docs/INSTALL.md
+    about: Requirements, admin rights, verification and how to roll back.
+  - name: Recovery steps
+    url: https://github.com/acenkk13/ACNX/blob/main/docs/TROUBLESHOOTING.md
+    about: Wi-Fi, Ethernet, NVIDIA App, Alt+Z, Windows Update and WSL2 fixes.
+  - name: Security report
+    url: https://github.com/acenkk13/ACNX/blob/main/SECURITY.md
+    about: Report a checksum mismatch or undocumented behaviour privately.

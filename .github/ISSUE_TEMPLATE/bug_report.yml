@@ -1,0 +1,94 @@
+name: Bug report
+description: Something broke after running ACNX - Wi-Fi, Ethernet, the NVIDIA App, the overlay, or a service you care about.
+title: "[bug] <build>: <short symptom>"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing: run the fixer for the build you used and reboot.
+        See [docs/TROUBLESHOOTING.md](../../docs/TROUBLESHOOTING.md).
+
+        Do not include serial numbers, MAC addresses or public IPs.
+
+  - type: dropdown
+    id: build
+    attributes:
+      label: Which build did you run?
+      options:
+        - ACNXClick.bat (One-Click)
+        - ACNXNUM+OPTIMIZER.cmd (Platinum)
+        - ACNXHI+OPTIMIZER.bat (High Impact)
+        - More than one (explain below)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Release version
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Windows version and build
+      placeholder: Windows 11 23H2 (22631.4317)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: What stopped working?
+      multiple: true
+      options:
+        - Wi-Fi (no networks listed)
+        - Wi-Fi (connects, no internet)
+        - Wi-Fi (WPA-Enterprise / campus)
+        - Ethernet
+        - NVIDIA App will not open
+        - Alt+Z overlay does nothing
+        - Instant Replay missing
+        - Windows Update
+        - WSL2 / Hyper-V / Docker / emulator
+        - Other service or feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Service snapshot
+      description: Paste the output of the command below.
+      render: powershell
+      value: |
+        Get-Service WlanSvc, Netman, Dhcp, Dnscache, BFE, dot3svc, Eaphost, RmSvc, NvContainerLocalSystem, NVDisplay.ContainerLocalSystem |
+          Select-Object Name, Status, StartType | Format-Table -AutoSize
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I ran the fixer for this build and rebooted
+        - label: I verified the SHA-256 against SHA256SUMS.txt
+        - label: I searched existing issues
