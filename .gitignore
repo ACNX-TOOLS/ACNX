@@ -1,7 +1,7 @@
 # Build output
 dist/
 *.zip
-SHA256SUMS.txt
+/SHA256SUMS.txt
 
 # Local scratch
 *.bak
