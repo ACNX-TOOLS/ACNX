@@ -15,3 +15,7 @@ dist/*    -text
 *.zip     binary
 *.png     binary
 *.ico     binary
+
+# LICENSE has no extension, so it needs an explicit rule or Windows
+# checkouts will rewrite it to CRLF.
+LICENSE text eol=lf
