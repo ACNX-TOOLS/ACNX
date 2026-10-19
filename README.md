@@ -37,6 +37,22 @@ Grab the build you want from the [**Releases**](https://github.com/acenkk13/ACNX
 
 All three are plain batch files. No installer, no service, no background process.
 
+### Playbooks
+
+If you prefer a GUI-driven install, the same tuning set ships as APBX playbooks for
+[AME Wizard](https://github.com/Ameliorated-LLC/AME-Wizard):
+
+| Playbook | Size | Based on |
+| --- | --- | --- |
+| `ACNXPlaybook.apbx` | 193 MiB | ACNX tuning set |
+| `ReimaginedOS-MOD.apbx` | 193 MiB | ReimaginedOS, network and NVIDIA kept intact |
+
+They are attached to the [latest release](https://github.com/ACNX-TOOLS/ACNX/releases/latest)
+rather than committed here, because each one is above GitHub's 100 MiB per-file git limit.
+Details, checksums and recovery steps: [playbooks/README.md](playbooks/README.md).
+
+Playbooks and batch scripts are alternatives — run one or the other, not both.
+
 ## Verify before you run
 
 Every release ships `SHA256SUMS.txt`. Check the file you downloaded:
@@ -85,6 +101,7 @@ Then reboot. Details in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ```text
 src/                     the three optimizer scripts
+playbooks/               APBX playbook notes, checksums and install guide
 tools/                   build + audit automation
 releases/                one markdown file per release (release list)
 docs/                    install, troubleshooting, network/NVIDIA notes

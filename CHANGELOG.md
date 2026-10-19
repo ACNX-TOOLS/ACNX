@@ -8,6 +8,30 @@ The full release list, with download tables and checksums, lives in [`releases/`
 
 ---
 
+## [1.1.0] - 2026-10-19
+
+Adds the APBX playbook packaging. The three batch builds are unchanged, byte for byte.
+
+### Added
+
+- `ACNXPlaybook.apbx` — ACNX tuning set as an AME Wizard playbook.
+- `ReimaginedOS-MOD.apbx` — ReimaginedOS layout and debloat, network and NVIDIA stack kept intact.
+- `playbooks/README.md` — install steps, checksums, encryption notes and recovery paths.
+
+### Changed
+
+- `VERSION` → 1.1.0.
+- README gains a Playbooks section and the updated repository layout.
+
+### Notes
+
+- Playbook archives are ~193 MiB each and ship as release assets, not in the git tree, because
+  they exceed GitHub's 100 MiB per-file limit.
+- Both archives have encrypted 7z headers. 7-Zip reports `Wrong password?` by design; AME Wizard
+  holds the key. Integrity is confirmed by SHA-256, not by opening the archive.
+
+---
+
 ## [1.0.0] - 2026-10-19
 
 First public source release. This is the **network-safe** branch: every build below keeps
