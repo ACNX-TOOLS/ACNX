@@ -6,27 +6,30 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 The full release list, with download tables and checksums, lives in [`releases/`](releases/).
 
+Two release lines are versioned independently:
+
+| Line | Tag | Contents |
+| --- | --- | --- |
+| Batch builds | `vX.Y.Z` | `ACNX-vX.Y.Z.zip`, `SHA256SUMS.txt` |
+| Playbooks | `playbooks-vX.Y.Z` | `*.apbx`, `SHA256SUMS-playbooks.txt` |
+
 ---
 
-## [1.1.0] - 2026-10-19
+## [playbooks-1.0.0] - 2026-10-19
 
-Adds the APBX playbook packaging. The three batch builds are unchanged, byte for byte.
+First playbook release. Separate line from the batch builds; the batch scripts are unchanged.
 
 ### Added
 
-- `ACNXPlaybook.apbx` — ACNX tuning set as an AME Wizard playbook.
+- `ACNXPlaybook.apbx` — ACNX tuning set packaged for AME Wizard.
 - `ReimaginedOS-MOD.apbx` — ReimaginedOS layout and debloat, network and NVIDIA stack kept intact.
 - `playbooks/README.md` — install steps, checksums, encryption notes and recovery paths.
-
-### Changed
-
-- `VERSION` → 1.1.0.
-- README gains a Playbooks section and the updated repository layout.
+- `playbooks/SHA256SUMS.txt` — versioned manifest for both archives.
 
 ### Notes
 
-- Playbook archives are ~193 MiB each and ship as release assets, not in the git tree, because
-  they exceed GitHub's 100 MiB per-file limit.
+- Playbook archives are ~193 MiB each. GitHub's git limit is 100 MiB per file, so they ship as
+  release assets and never enter the tree.
 - Both archives have encrypted 7z headers. 7-Zip reports `Wrong password?` by design; AME Wizard
   holds the key. Integrity is confirmed by SHA-256, not by opening the archive.
 

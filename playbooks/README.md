@@ -5,11 +5,13 @@ ACNX tuning set as a playbook instead of a batch script, for people who prefer a
 scriptable install.
 
 Playbook archives are **not stored in this repository's tree** — each one is ~193 MiB, which is
-above GitHub's 100 MiB per-file git limit. They ship as release assets instead.
+above GitHub's 100 MiB per-file git limit. They ship in their own release line, tagged
+`playbooks-vX.Y.Z`, separate from the batch builds.
 
 ## Download
 
-Grab them from the latest release: **[Releases → latest](https://github.com/ACNX-TOOLS/ACNX/releases/latest)**
+**[Playbooks v1.0.0](https://github.com/ACNX-TOOLS/ACNX/releases/tag/playbooks-v1.0.0)**
+· [all releases](https://github.com/ACNX-TOOLS/ACNX/releases)
 
 | File | Size | SHA-256 |
 | --- | --- | --- |

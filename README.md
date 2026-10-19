@@ -47,8 +47,10 @@ If you prefer a GUI-driven install, the same tuning set ships as APBX playbooks 
 | `ACNXPlaybook.apbx` | 193 MiB | ACNX tuning set |
 | `ReimaginedOS-MOD.apbx` | 193 MiB | ReimaginedOS, network and NVIDIA kept intact |
 
-They are attached to the [latest release](https://github.com/ACNX-TOOLS/ACNX/releases/latest)
-rather than committed here, because each one is above GitHub's 100 MiB per-file git limit.
+They live in their own release line —
+[**Playbooks v1.0.0**](https://github.com/ACNX-TOOLS/ACNX/releases/tag/playbooks-v1.0.0) — rather
+than in this repository, because each archive is above GitHub's 100 MiB per-file git limit.
+Playbook releases use the tag `playbooks-vX.Y.Z` and never mix with batch builds.
 Details, checksums and recovery steps: [playbooks/README.md](playbooks/README.md).
 
 Playbooks and batch scripts are alternatives — run one or the other, not both.
