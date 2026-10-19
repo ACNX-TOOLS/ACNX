@@ -11,7 +11,7 @@ Two release lines are versioned independently:
 | Line | Tag | Contents |
 | --- | --- | --- |
 | Batch builds | `vX.Y.Z` | `ACNX-vX.Y.Z.zip`, `SHA256SUMS.txt` |
-| Playbooks | `playbooks-vX.Y.Z` | `*.apbx`, `SHA256SUMS-playbooks.txt` |
+| Playbooks | `playbooks-vX.Y.Z` | `*.apbx` |
 
 ---
 

@@ -11,7 +11,7 @@ a playbook release only ever contains playbook archives, and a batch release onl
 | Release line | Tag pattern | Assets |
 | --- | --- | --- |
 | Batch builds | `vX.Y.Z` | `ACNX-vX.Y.Z.zip`, `SHA256SUMS.txt` |
-| Playbooks | `playbooks-vX.Y.Z` | `*.apbx`, `SHA256SUMS-playbooks.txt` |
+| Playbooks | `playbooks-vX.Y.Z` | `*.apbx` |
 
 ---
 
@@ -93,5 +93,8 @@ apply the matching fixer, reboot, then run the new one.
 
 ## Checksums
 
-`SHA256SUMS-playbooks.txt` is attached to this release and also versioned at
-[`playbooks/SHA256SUMS.txt`](../playbooks/SHA256SUMS.txt).
+GitHub prints the `sha256:` digest next to every asset on this page — click it to copy. That is
+the same value as the table above, so there is no separate manifest file to download.
+
+The manifest also lives in the repository at [`playbooks/SHA256SUMS.txt`](../playbooks/SHA256SUMS.txt)
+if you want to verify from a clone.
