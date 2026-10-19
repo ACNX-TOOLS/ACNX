@@ -22,7 +22,6 @@ First playbook release. Separate line from the batch builds; the batch scripts a
 ### Added
 
 - `ACNXPlaybook.apbx` — ACNX tuning set packaged for AME Wizard.
-- `ReimaginedOS-MOD.apbx` — ReimaginedOS layout and debloat, network and NVIDIA stack kept intact.
 - `playbooks/README.md` — install steps, checksums, encryption notes and recovery paths.
 - `playbooks/SHA256SUMS.txt` — versioned manifest for both archives.
 

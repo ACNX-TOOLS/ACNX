@@ -20,7 +20,6 @@ a playbook release only ever contains playbook archives, and a batch release onl
 | File | Size | SHA-256 |
 | --- | --- | --- |
 | `ACNXPlaybook.apbx` | 202.015.188 B | `df196c396eac18a5545c0ab2e4d212d55ab221d7ac614dbd52d19c4fd494679d` |
-| `ReimaginedOS-MOD.apbx` | 202.014.564 B | `dcc5a60cfd1b64310e1b25d5fb84b2fe32761857b5d88aacbca8b8118eb7d223` |
 
 Verify before running:
 
@@ -35,7 +34,6 @@ Get-FileHash .\ACNXPlaybook.apbx -Algorithm SHA256
 | Playbook | Based on | Purpose |
 | --- | --- | --- |
 | `ACNXPlaybook.apbx` | ACNX tuning set | Service, network and GPU configuration applied through AME Wizard |
-| `ReimaginedOS-MOD.apbx` | ReimaginedOS | ReimaginedOS layout and debloat, network and NVIDIA stack left intact |
 
 ## Requirements
 
